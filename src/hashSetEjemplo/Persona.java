@@ -14,7 +14,7 @@ public class Persona {
 	}
 
 	//Constructor con parámetros
-	public Persona(String apellido, String nombre, String fechaNac) {
+	public Persona(String nombre, String apellido, String fechaNac) {
 		super();
 		this.nombre = apellido;
 		this.apellido = nombre;
