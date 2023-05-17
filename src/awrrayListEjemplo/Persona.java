@@ -1,4 +1,4 @@
-package arrayListEjemplo;
+package awrrayListEjemplo;
 
 public class Persona {
 	
