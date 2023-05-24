@@ -65,7 +65,9 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 		if (e.getSource().equals(consCli.getOkButton()) || e.getSource().equals(consCli.getCancelButton())) {
 
 		}
-
+		if (e.getSource().equals(consCli.getCancelButton())) {
+			consCli.setVisible(false);
+		}
 	}
 
 	@Override

@@ -43,7 +43,7 @@ public class ControladorAltaCliente implements ActionListener {
 			modCliente.añadirCliente(cliente);
 
 		}
-		if(e.getSource().equals(altCli.getCancelButton())) {
+		if (e.getSource().equals(altCli.getCancelButton())) {
 			altCli.setVisible(false);
 		}
 	}
