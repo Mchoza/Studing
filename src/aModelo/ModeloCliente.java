@@ -24,5 +24,14 @@ public class ModeloCliente {
 		return clientes;
 	}
 	
+	public void vaciarCliente() {
+		clientes.removeAll(clientes);
+		
+		for (Cliente cliente1 : clientes) {
+			System.out.println(cliente1);
+		}
+	}
+	
+	
 
 }

@@ -3,6 +3,7 @@ package aControlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.event.ListSelectionEvent;
@@ -33,7 +34,7 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 		// En este caso tendremos 2, el ok y el cancel
 		// Les llamaremos mediante el getter creado
 		consCli.getOkButton().addActionListener(this);
-		consCli.getCancelButton().addActionListener(this);
+		consCli.getBorrarButton().addActionListener(this);
 		consCli.getModelo().addAll(extraerNombreCli());
 		consCli.getList().addListSelectionListener(this);
 
@@ -55,25 +56,57 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 		}
 		return nomCli;
 	}
-	
-	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
+		ArrayList<Cliente> temp = new ArrayList<>();
+		ArrayList<String> tempNombre = new ArrayList<>();
+		Cliente clienteBor = null;
+		
 		// Primero hacemos el if y comparamos
-		if (e.getSource().equals(consCli.getOkButton()) || e.getSource().equals(consCli.getCancelButton())) {
+		if (e.getSource().equals(consCli.getOkButton())) {
 
 		}
-		if (e.getSource().equals(consCli.getCancelButton())) {
-			consCli.setVisible(false);
+		if (e.getSource().equals(consCli.getBorrarButton())) {
+			//modCliente.vaciarCliente();
+			for (Cliente cliente : modCliente.getListaClientes()) {
+				if (consCli.gettDNI().getText().equalsIgnoreCase(cliente.getDni())) {
+					clienteBor = cliente;
+
+				}else {
+					temp.add(cliente);
+					tempNombre.add(cliente.getNombre());
+
+				}
+				
+
+			}
+			modCliente.eliminarCliente(clienteBor);
+			
+
+			for (int i = 0; i < modCliente.getListaClientes().size()+1; i++) {
+				consCli.getModelo().set(i, null);
+			}
+
+			
+			//consCli.getList().getModel().;
+			
+			
+			//consCli.getModelo().;
+			consCli.getModelo().addAll(extraerNombreCli());
+			
+
+
+			
+
 		}
 	}
 
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 
-		if(e.getSource().equals(consCli.getList())) {
+		if (e.getSource().equals(consCli.getList())) {
 			int temp = consCli.getList().getSelectedIndex();
 			consCli.gettDNI().setText(modCliente.getListaClientes().get(temp).getDni());
 			consCli.gettNombre().setText(modCliente.getListaClientes().get(temp).getNombre());

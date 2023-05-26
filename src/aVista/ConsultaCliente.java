@@ -18,7 +18,6 @@ import javax.swing.ListSelectionModel;
 public class ConsultaCliente extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JButton cancelButton;
 	private JButton okButton;
 	private JScrollPane scrollPane;
 	private JList list;
@@ -59,6 +58,7 @@ public class ConsultaCliente extends JDialog {
 	private JTextField tNombre;
 	private JTextField tTelefono;
 	private DefaultListModel<String> modelo=new DefaultListModel<>();
+	private JButton borrarButton;
 
 	
 
@@ -132,20 +132,22 @@ public class ConsultaCliente extends JDialog {
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
-				cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+				borrarButton = new JButton("Borrar");
+				borrarButton.setActionCommand("Borrar");
+				buttonPane.add(borrarButton);
 			}
 		}
+	}
+
+	public JButton getBorrarButton() {
+		return borrarButton;
 	}
 
 	public DefaultListModel<String> getModelo() {
 		return modelo;
 	}
 
-	public JButton getCancelButton() {
-		return cancelButton;
-	}
+	
 
 	public JButton getOkButton() {
 		return okButton;
