@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import aModelo.ModeloCliente;
+import aModelo.ModeloProducto;
 import aVista.VentanaPrincipal;
 
 //1ºImportamos la vista que queramos llamar
@@ -21,6 +22,8 @@ public class ControladorVentanaPrincipal implements ActionListener {
 	private VentanaPrincipal vPrinc;
 	//6ºEsto es para que pueda acceder a los datos, a la lógica del programa
 	private ModeloCliente modCliente;
+	//Accedemos a los datos de producto
+	private ModeloProducto modProd;
 
 	// 2º Hacemos el constructor del controlador
 	public ControladorVentanaPrincipal() {
@@ -35,6 +38,8 @@ public class ControladorVentanaPrincipal implements ActionListener {
 		vPrinc.getBtnAltaCli().addActionListener(this);
 		vPrinc.getmConsultaCli().addActionListener(this);
 		vPrinc.getBtnConsultaCli().addActionListener(this);
+		vPrinc.getBtnGestionProd().addActionListener(this);
+		vPrinc.getmGestionProd().addActionListener(this);
 		// Aqui añadiriamos TODOS
 		//en este caso ponemos el setVisible lo ponemos al FINAL de todo lo que hayamos metido
 		vPrinc.setVisible(true);
@@ -55,9 +60,14 @@ public class ControladorVentanaPrincipal implements ActionListener {
 			System.out.println(modCliente.getListaClientes().toString());
 		}
 		if(e.getSource().equals(vPrinc.getmConsultaCli())||e.getSource().equals(vPrinc.getBtnConsultaCli())) {
-			//Llamamos al controlador de la ventana COnsultaCliente
+			//Llamamos al controlador de la ventana ConsultaCliente
 			new ControladorConsultaCliente(modCliente);
 			System.out.println(modCliente.getListaClientes().toString());
+
+		}
+		if(e.getSource().equals(vPrinc.getmGestionProd())||e.getSource().equals(vPrinc.getBtnGestionProd())) {
+			new ControladorGestionProducto(modProd);
+			//System.out.println(modProd.verProductos().toString());
 
 		}
 

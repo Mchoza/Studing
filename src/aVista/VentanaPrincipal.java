@@ -24,16 +24,14 @@ public class VentanaPrincipal extends JFrame {
 	private JMenuItem mBajaCli;
 	private JMenuItem mConsultaCli;
 	private JMenu mnProductos;
-	private JMenuItem mAltaProd;
-	private JMenuItem mBajaProd;
-	private JMenuItem mConsultaProd;
+	private JMenuItem mGestionProd;
+
 	private JToolBar toolBar;
 	private JButton btnAltaCli;
 	private JButton btnBajCli;
 	private JButton btnConsultaCli;
-	private JButton btnAltaProd;
-	private JButton btnBajaProd;
-	private JButton btnConsultaProd;
+	private JButton btnGestionProd;
+
 
 	public JPanel getContentPane() {
 		return contentPane;
@@ -59,17 +57,11 @@ public class VentanaPrincipal extends JFrame {
 		return mnProductos;
 	}
 
-	public JMenuItem getmAltaProd() {
-		return mAltaProd;
+	public JMenuItem getmGestionProd() {
+		return mGestionProd;
 	}
 
-	public JMenuItem getmBajaProd() {
-		return mBajaProd;
-	}
 
-	public JMenuItem getmConsultaProd() {
-		return mConsultaProd;
-	}
 
 	public JToolBar getToolBar() {
 		return toolBar;
@@ -87,16 +79,10 @@ public class VentanaPrincipal extends JFrame {
 		return btnConsultaCli;
 	}
 
-	public JButton getBtnAltaProd() {
-		return btnAltaProd;
-	}
 
-	public JButton getBtnBajaProd() {
-		return btnBajaProd;
-	}
 
-	public JButton getBtnConsultaProd() {
-		return btnConsultaProd;
+	public JButton getBtnGestionProd() {
+		return btnGestionProd;
 	}
 
 	/**
@@ -131,14 +117,10 @@ public class VentanaPrincipal extends JFrame {
 		mnProductos = new JMenu("Productos");
 		menuBar.add(mnProductos);
 
-		mAltaProd = new JMenuItem("Alta");
-		mnProductos.add(mAltaProd);
+		mGestionProd = new JMenuItem("Gestión Productos");
+		mnProductos.add(mGestionProd);
 
-		mBajaProd = new JMenuItem("Baja");
-		mnProductos.add(mBajaProd);
 
-		mConsultaProd = new JMenuItem("Consulta");
-		mnProductos.add(mConsultaProd);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -160,17 +142,11 @@ public class VentanaPrincipal extends JFrame {
 		btnConsultaCli.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/cliente.png")));
 		toolBar.add(btnConsultaCli);
 
-		btnAltaProd = new JButton("");
-		btnAltaProd.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icons8-cesta-100.png")));
-		toolBar.add(btnAltaProd);
+		btnGestionProd = new JButton("");
+		btnGestionProd.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icons8-cesta-100.png")));
+		toolBar.add(btnGestionProd);
 
-		btnBajaProd = new JButton("");
-		btnBajaProd.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icons8-cesta-100.png")));
-		toolBar.add(btnBajaProd);
-
-		btnConsultaProd = new JButton("");
-		btnConsultaProd.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icons8-cesta-100.png")));
-		toolBar.add(btnConsultaProd);
+	
 	}
 
 }

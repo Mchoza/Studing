@@ -85,15 +85,7 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 			modCliente.eliminarCliente(clienteBor);
 			
 
-			for (int i = 0; i < modCliente.getListaClientes().size()+1; i++) {
-				consCli.getModelo().set(i, null);
-			}
-
 			
-			//consCli.getList().getModel().;
-			
-			
-			//consCli.getModelo().;
 			consCli.getModelo().addAll(extraerNombreCli());
 			
 
