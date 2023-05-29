@@ -60,7 +60,6 @@ public class ControladorGestionProducto implements ActionListener{
 
 			modProd.añadirProducto(producto);
 
-			//System.out.println(modProd.verProductos().toString());
 
 
 		}

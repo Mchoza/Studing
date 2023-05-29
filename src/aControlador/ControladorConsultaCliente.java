@@ -61,35 +61,24 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 	public void actionPerformed(ActionEvent e) {
 
 		ArrayList<Cliente> temp = new ArrayList<>();
-		ArrayList<String> tempNombre = new ArrayList<>();
+		// ArrayList<String> tempNombre = new ArrayList<>();//? ya yienes un metodo
 		Cliente clienteBor = null;
-		
+
 		// Primero hacemos el if y comparamos
 		if (e.getSource().equals(consCli.getOkButton())) {
 
 		}
 		if (e.getSource().equals(consCli.getBorrarButton())) {
-			//modCliente.vaciarCliente();
+			// modCliente.vaciarCliente();
 			for (Cliente cliente : modCliente.getListaClientes()) {
 				if (consCli.gettDNI().getText().equalsIgnoreCase(cliente.getDni())) {
 					clienteBor = cliente;
-
-				}else {
-					temp.add(cliente);
-					tempNombre.add(cliente.getNombre());
-
 				}
-				
 
 			}
 			modCliente.eliminarCliente(clienteBor);
-			
-
-			
+			consCli.getModelo().clear();
 			consCli.getModelo().addAll(extraerNombreCli());
-			
-
-
 			
 
 		}
@@ -99,11 +88,14 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 	public void valueChanged(ListSelectionEvent e) {
 
 		if (e.getSource().equals(consCli.getList())) {
-			int temp = consCli.getList().getSelectedIndex();
-			consCli.gettDNI().setText(modCliente.getListaClientes().get(temp).getDni());
-			consCli.gettNombre().setText(modCliente.getListaClientes().get(temp).getNombre());
-			consCli.gettTelefono().setText(modCliente.getListaClientes().get(temp).getTelefono());
 
+			if (!consCli.getModelo().isEmpty()) {
+
+				int temp = consCli.getList().getSelectedIndex();
+				consCli.gettDNI().setText(modCliente.getListaClientes().get(temp).getDni());
+				consCli.gettNombre().setText(modCliente.getListaClientes().get(temp).getNombre());
+				consCli.gettTelefono().setText(modCliente.getListaClientes().get(temp).getTelefono());
+			}
 		}
 	}
 

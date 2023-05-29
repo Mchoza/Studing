@@ -46,6 +46,8 @@ public class ControladorVentanaPrincipal implements ActionListener {
 		
 		//7º Instanciamos el modelocliente
 		modCliente = new ModeloCliente();
+		//Instanciamos el modeloProducto
+		modProd = new ModeloProducto();
 
 	}
 
@@ -67,7 +69,7 @@ public class ControladorVentanaPrincipal implements ActionListener {
 		}
 		if(e.getSource().equals(vPrinc.getmGestionProd())||e.getSource().equals(vPrinc.getBtnGestionProd())) {
 			new ControladorGestionProducto(modProd);
-			//System.out.println(modProd.verProductos().toString());
+			System.out.println(modProd.verProductos().toString());
 
 		}
 
