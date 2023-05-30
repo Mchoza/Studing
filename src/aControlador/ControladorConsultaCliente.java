@@ -80,6 +80,9 @@ public class ControladorConsultaCliente implements ActionListener, ListSelection
 			consCli.getModelo().clear();
 			consCli.getModelo().addAll(extraerNombreCli());
 			
+			consCli.gettDNI().setText("");
+			consCli.gettNombre().setText("");
+			consCli.gettTelefono().setText("");
 
 		}
 	}
