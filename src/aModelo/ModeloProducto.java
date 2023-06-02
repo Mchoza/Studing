@@ -19,7 +19,7 @@ public class ModeloProducto {
 		productos.remove(producto);
 	}
 	
-	public ArrayList<Producto> verProductos() {
+	public ArrayList<Producto> getListaProductos() {
 		return productos;
 	}
 	

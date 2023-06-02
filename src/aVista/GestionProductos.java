@@ -34,6 +34,24 @@ public class GestionProductos extends JDialog {
 	private JButton btnGuardar;
 	private JButton cancelButton;
 	private JButton btnSalir;
+	private JComboBox<?> cbNombreProd;
+	private JButton btnBorrar;
+	private JButton btnSalir_2;
+	private JComboBox cbCategoria;
+	
+	
+
+	public void setCbNombreProd(String nombres) {
+		this.cbNombreProd = cbNombreProd;
+	}
+
+	public JButton getBtnSalir_2() {
+		return btnSalir_2;
+	}
+
+	public JButton getBtnBorrar() {
+		return btnBorrar;
+	}
 
 	public JPanel getPanelCard() {
 		return panelCard;
@@ -41,6 +59,10 @@ public class GestionProductos extends JDialog {
 
 	public JButton getBtnAlta() {
 		return btnAlta;
+	}
+
+	public JButton getBtnBaja() {
+		return btnBaja;
 	}
 
 	/**
@@ -159,7 +181,7 @@ public class GestionProductos extends JDialog {
 		panelCard.add(panelBaja, "baja");
 		panelBaja.setLayout(null);
 
-		JComboBox cbNombreProd = new JComboBox();
+		cbNombreProd = new JComboBox();
 		cbNombreProd.setBounds(73, 29, 149, 22);
 		panelBaja.add(cbNombreProd);
 
@@ -175,7 +197,7 @@ public class GestionProductos extends JDialog {
 		lblCategoriaBaja.setBounds(60, 166, 70, 14);
 		panelBaja.add(lblCategoriaBaja);
 
-		JComboBox cbCategoria = new JComboBox();
+		cbCategoria = new JComboBox();
 		cbCategoria.setBounds(145, 162, 109, 22);
 		panelBaja.add(cbCategoria);
 
@@ -189,7 +211,7 @@ public class GestionProductos extends JDialog {
 		tNombreBaja.setBounds(145, 122, 96, 20);
 		panelBaja.add(tNombreBaja);
 
-		JButton btnSalir_2 = new JButton("SALIR");
+		btnSalir_2 = new JButton("SALIR");
 		btnSalir_2.setBounds(204, 212, 63, 23);
 		panelBaja.add(btnSalir_2);
 
@@ -197,7 +219,7 @@ public class GestionProductos extends JDialog {
 		btnModificar.setBounds(96, 212, 98, 23);
 		panelBaja.add(btnModificar);
 
-		JButton btnBorrar = new JButton("BORRAR");
+		btnBorrar = new JButton("BORRAR");
 		btnBorrar.setBounds(10, 212, 76, 23);
 		panelBaja.add(btnBorrar);
 
@@ -246,6 +268,22 @@ public class GestionProductos extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 		}
+	}
+
+	public JComboBox getCbCategoria() {
+		return cbCategoria;
+	}
+
+	public JTextField gettIdBaja() {
+		return tIdBaja;
+	}
+
+	public JTextField gettNombreBaja() {
+		return tNombreBaja;
+	}
+
+	public JComboBox getCbNombreProd() {
+		return cbNombreProd;
 	}
 
 	public JTextField gettId() {

@@ -69,7 +69,7 @@ public class ControladorVentanaPrincipal implements ActionListener {
 		}
 		if(e.getSource().equals(vPrinc.getmGestionProd())||e.getSource().equals(vPrinc.getBtnGestionProd())) {
 			new ControladorGestionProducto(modProd);
-			System.out.println(modProd.verProductos().toString());
+			System.out.println(modProd.getListaProductos().toString());
 
 		}
 
