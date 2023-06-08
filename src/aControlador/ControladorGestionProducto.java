@@ -150,6 +150,11 @@ public class ControladorGestionProducto implements ActionListener {
 			modProd.añadirProducto(producto);
 
 		}
+		//consulta
+		if (e.getSource().equals(gestProd.getBtnSalir_2())) {
+			((CardLayout) gestProd.getPanelCard().getLayout()).show(gestProd.getPanelCard(), "basico");
+
+		}
 
 	}
 
